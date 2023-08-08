@@ -1,0 +1,193 @@
+:root {
+  --main-background: #091921;
+  --secondary-background: #318bb9;
+  --tertiary-background: #133547;
+  --main-text: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  /* Set font size for easy rem calculations
+   * default document font size = 16px, 1rem = 16px, 100% = 16px
+   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+  */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+  html {
+    font-size: 60%;
+  }
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+  html {
+    font-size: 58%;
+  }
+}
+
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+  html {
+    font-size: 55%;
+  }
+}
+
+body {
+  font-family: Helvetica;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--main-text);
+  line-height: 1.4;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+  text-align: center;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 4.2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-text);
+}
+
+.nav {
+  /* border: 1px solid black; */
+  background: var(--main-background);
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navlist {
+  /* border: 1px solid black; */
+  display: flex;
+  margin-right: 2rem;
+}
+
+@media (max-width: 28.75em) {
+  .nav {
+    justify-content: center;
+  }
+
+  .nav-list {
+    margin: 0 1rem;
+  }
+}
+
+.navlist a {
+  /* border: 1px solid black; */
+  display: block;
+  padding: 2rem;
+  font-size: 2.2rem;
+}
+
+.navlist a:hover {
+  background: var(--secondary-background);
+}
+
+#welcome-section {
+  /* border: 1px solid black; */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(105deg, var(--secondary-background), gray);
+}
+
+#welcome-section > p {
+  font-size: 3rem;
+  font-weight: 200;
+  font-style: italic;
+  color: var(--main-background);
+}
+
+#projects {
+  /* border: 5px solid black; */
+  text-align: center;
+  padding: 10rem 2rem;
+  width: 100%;
+  height: 40vh;
+  background: var(--tertiary-background);
+}
+
+#projects > p {
+  border-bottom: 2px solid var(--main-text);
+}
+
+.project-tile {
+  display: flex;
+  justify-content: center;
+  padding: 5rem 5rem;
+  font-size: 3rem;
+}
+
+.project-tile a {
+  transition: transform 0.1s linear;
+}
+
+.project-tile a:hover {
+  /* background-color: var(--secondary-background); */
+  transform: scale(1.25);
+}
+
+#contact-section {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--main-background);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-links {
+  display: flex;
+}
+
+.contact-links a {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 2.2rem;
+  padding: 15px;
+  transition: transform 0.1s linear;
+}
+
+.contact-links a:hover {
+  transform: translateY(10px);
+}
+
