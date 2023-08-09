@@ -21,6 +21,7 @@ html {
    * default document font size = 16px, 1rem = 16px, 100% = 16px
    * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
   */
+  scroll-padding-top: 75px;
   font-size: 62.5%;
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -43,7 +44,8 @@ html {
 /* 460px / 16px = 28.75em */
 @media (max-width: 28.75em) {
   html {
-    font-size: 55%;
+    scroll-padding-top: 135px;
+    font-size: 53%;
   }
 }
 
@@ -79,89 +81,87 @@ a {
 }
 
 .nav {
-  /* border: 1px solid black; */
   background: var(--main-background);
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  height: 75px;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
 }
 
-.navlist {
-  /* border: 1px solid black; */
-  display: flex;
-  margin-right: 2rem;
-}
-
-@media (max-width: 28.75em) {
-  .nav {
-    justify-content: center;
-  }
-
-  .nav-list {
-    margin: 0 1rem;
-  }
-}
-
-.navlist a {
-  /* border: 1px solid black; */
+.nav a {
+  height: 100%;
   display: block;
   padding: 2rem;
   font-size: 2.2rem;
 }
 
-.navlist a:hover {
+@media (max-width: 28.75em) {
+  .nav {
+    flex-direction: column;
+    height: 135px;
+  }
+
+  .nav a {
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+.nav a:hover {
   background: var(--secondary-background);
 }
 
 #welcome-section {
-  /* border: 1px solid black; */
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100vh;
   background: linear-gradient(105deg, var(--secondary-background), gray);
 }
 
-#welcome-section > p {
+#goal {
   font-size: 3rem;
   font-weight: 200;
   font-style: italic;
   color: var(--main-background);
 }
 
+#more-info {
+  font-size: 1.6rem;
+  color: var(--main-background);
+}
+
 #projects {
-  /* border: 5px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   padding: 10rem 2rem;
   width: 100%;
-  height: 40vh;
+  height: 35vh;
   background: var(--tertiary-background);
 }
 
-#projects > p {
+#projects > h2 {
   border-bottom: 2px solid var(--main-text);
 }
 
 .project-tile {
   display: flex;
   justify-content: center;
-  padding: 5rem 5rem;
+  padding: 3rem 3rem;
   font-size: 3rem;
 }
 
-.project-tile a {
-  transition: transform 0.1s linear;
-}
-
 .project-tile a:hover {
-  /* background-color: var(--secondary-background); */
-  transform: scale(1.25);
+  color: var(--secondary-background);
 }
 
 #contact-section {
@@ -178,6 +178,17 @@ a {
   display: flex;
 }
 
+@media (max-width: 28.75em) {
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-links a:hover {
+    transform: translateX(10px);
+  }
+}
+
 .contact-links a {
   display: flex;
   gap: 10px;
@@ -190,4 +201,3 @@ a {
 .contact-links a:hover {
   transform: translateY(10px);
 }
-
