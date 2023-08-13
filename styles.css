@@ -135,6 +135,20 @@ a {
   object-fit: contain;
 }
 
+@media (max-width: 35em) {
+  #headshot {
+    height: 250px;
+    width:250px;
+  }
+}
+
+@media (max-width: 18em) {
+  #headshot {
+    height: 150px;
+    width: 150px;
+  }
+}
+
 #goal {
   font-size: 3rem;
   font-weight: 200;
